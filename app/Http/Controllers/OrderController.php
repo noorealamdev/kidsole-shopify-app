@@ -10,7 +10,7 @@ class OrderController extends Controller
     public function index()
     {
         $shop = Auth::user();
-        $orders = $shop->api()->rest('GET', '/admin/orders.json', ['status' => 'any', 'created_at_min' => "2020-01-01", 'limit' => 250])['body']['orders'];
+        $orders = $shop->api()->rest('GET', '/admin/orders.json', ['status' => 'closed', 'created_at_min' => "2020-01-01", 'limit' => 250])['body']['orders'];
         //dd($orders);
         return view('orders', compact('orders'));
     }
