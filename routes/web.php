@@ -42,8 +42,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware(['verify.shopify'])->group(function() {
-    Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('home');
-    //Route::get('/', [\App\Http\Controllers\OrderController::class, 'index'])->name('home');
+    //Route::get('/', [\App\Http\Controllers\DashboardController::class, 'index'])->name('home');
+    Route::get('/', [\App\Http\Controllers\CustomerDataController::class, 'index'])->name('home');
     Route::get('/orders', [\App\Http\Controllers\OrderController::class, 'index'])->name('order');
     Route::get('/test', [\App\Http\Controllers\TestController::class, 'test'])->name('test');
 });

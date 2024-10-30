@@ -26,10 +26,34 @@
             </nav>
         </div>
         <!-- Header Navbar Ends -->
+
+        <div class="card">
+            <div class="card-header">
+                <h4>All customers from province based on order shipping province name (last update 30 Oct 2024)</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped bordered-table mb-0">
+                    <thead>
+                    <tr>
+                        <th>Province name</th>
+                        <th>Total customers</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($customer_province as $customer)
+                        <tr>
+                            <td>{{ $customer->province_name }}</td>
+                            <td>{{ $customer->customer_count }}</td>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     @parent
     <script>

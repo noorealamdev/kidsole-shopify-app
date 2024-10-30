@@ -29,7 +29,7 @@
         </div>
         <!-- Header Navbar Ends -->
 
-        <div class="card basic-data-table">
+        <div class="card">
             <div class="card-body">
                 <table class="table bordered-table mb-0" id="dataTable" data-page-length='20'>
                     <thead>
